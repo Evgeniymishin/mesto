@@ -7,9 +7,71 @@
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="root">
-  <header class="header"></header>
-  <section class="profile"></section>
-  <section class="elements"></section>
-  <footer class="footer"></footer>
+  <header class="header">
+    <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+  </header>
+
+  <section class="profile">
+    <div class="profile__container">
+      <div class="profile__avatar-container">
+        <img class="profile__avatar" src="./images/profile-image.png" alt="Аватар автора">
+      </div>
+      <div class="profile-info">
+        <h1 class="profile-info__title">Жак-Ив Кусто</h1>
+        <button class="profile-info__edit-button"></button>
+        <p class="profile-info__subtitle">Исследователь океана</p>
+      </div>
+    </div>
+    <button class="profile__add-button"></button>
+  </section>
+
+  <section class="elements">
+    <figure class="element">
+        <img src="./images/karachaevsk.png" alt="Карачаевск" class="element__photo">
+        <figcaption class="element__title-container">
+          <h2 class="element__title">Карачаевск</h2>
+          <button class="element__like"></button>
+        </figcaption>
+    </figure>
+    <figure class="element">
+      <img src="./images/elbrus.png" alt="Гора Эльбрус" class="element__photo">
+      <figcaption class="element__title-container">
+        <h2 class="element__title">Гора Эльбрус</h2>
+        <button class="element__like"></button>
+      </figcaption>
+    </figure>
+    <figure class="element">
+      <img src="./images/dombay.png" alt="Домбай" class="element__photo">
+      <figcaption class="element__title-container">
+        <h2 class="element__title">Домбай</h2>
+        <button class="element__like"></button>
+      </figcaption>
+    </figure>
+    <figure class="element">
+      <img src="./images/elbrus.png" alt="Гора Эльбрус" class="element__photo">
+      <figcaption class="element__title-container">
+        <h2 class="element__title">Гора Эльбрус</h2>
+        <button class="element__like"></button>
+      </figcaption>
+    </figure>
+    <figure class="element">
+      <img src="./images/dombay.png" alt="Домбай" class="element__photo">
+      <figcaption class="element__title-container">
+        <h2 class="element__title">Домбай</h2>
+        <button class="element__like"></button>
+      </figcaption>
+    </figure>
+    <figure class="element">
+      <img src="./images/karachaevsk.png" alt="Карачаевск" class="element__photo">
+      <figcaption class="element__title-container">
+        <h2 class="element__title">Карачаево-Черкесия</h2>
+        <button class="element__like"></button>
+      </figcaption>
+    </figure>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__copyrights">&copy; 2020 Mesto Russia</p>
+  </footer>
 </body>
 </html>

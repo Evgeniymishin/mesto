@@ -1,0 +1,6 @@
+.element__title-container {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin: 22px 20px 31px 21px;
+}
