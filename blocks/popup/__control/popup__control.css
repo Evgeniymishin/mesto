@@ -1,0 +1,19 @@
+.popup__control {
+  width: 358px;
+  height: 27px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  font-style: normal;
+  font-weight: normal;
+  margin: 0 auto 30px;
+}
+
+.popup__control:last-of-type {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 320px) and (max-width: 580px) {
+  .popup__control {
+    width: 238px;
+    margin: 0 auto 30px;
+  }
+}
