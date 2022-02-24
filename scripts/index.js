@@ -1,7 +1,6 @@
 let root = document.querySelector('.root');
 let editButton = root.querySelector('.profile-info__edit-button');
 let popup = root.querySelector('.popup');
-let addButton = root.querySelector('.profile__add-button');
 let closeButton = root.querySelector('.popup__close-button');
 let profileTitle = root.querySelector('.popup__input_type_title');
 let profileSubtitle = root.querySelector('.popup__input_type_subtitle');
