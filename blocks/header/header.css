@@ -3,7 +3,7 @@
   min-height: 74px;
   display: flex;
   margin: 45px auto 0;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
 }
 
 @media screen and (min-width: 581px) and (max-width: 879px) {
