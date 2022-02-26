@@ -9,7 +9,12 @@
   opacity: 100%;
   transition: opacity 0.2s;
   margin: 48px auto 37px;
-  border-radius: 10px;
+  border-radius: 2px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
 }
 
 .popup__submit-button:hover {
@@ -20,7 +25,6 @@
   .popup__submit-button {
     width: 238px;
     height: 46px;
-    margin-top: 44px;
-    border-radius: 2px;
+    margin: 45px auto 25px;
   }
 }
