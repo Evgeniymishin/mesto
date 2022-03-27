@@ -1,0 +1,12 @@
+.photo-preview__img {
+  max-width: 75vw;
+  max-height: 75vh;
+}
+
+@media screen and (min-width: 320px) and (max-width: 580px) {
+  .photo-preview__img {
+    max-width: 240px;
+    object-fit: cover;
+  }
+  
+}

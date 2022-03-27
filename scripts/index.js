@@ -37,7 +37,12 @@ let profileInfo = root.querySelector('.profile-info__text');
 let form = root.querySelector('.popup__form');
 let popupTitle = root.querySelector('.popup__title')
 let submitButton = root.querySelector('.popup__submit-button');
-let popupType;
+let popupType = null;
+let photoPreview = root.querySelector('.photo-preview');
+let photoPreviewImg = photoPreview.querySelector('.photo-preview__img');
+let photoPreviewCaption = photoPreview.querySelector('.photo-preview__caption');
+// let photoPreviewCloseButton =  photoPreview.querySelector('.photo-preview__close-button');
+
 
 
 renderInitialCards()
@@ -45,13 +50,23 @@ renderInitialCards()
 form.addEventListener('submit', formSubmitHandler)
 
 document.body.addEventListener('click', (event) => {
+  const element = event.target.closest('.element')
+
   if (event.target.classList.contains('profile-info__edit-button')) {
     runEditForm(event);
   } else if (event.target.classList.contains('popup__close-button')) {
     toggleForm();
   } else if (event.target.classList.contains('profile__add-button')) {
     runAddForm(event);
-  } 
+  } else if (event.target.classList.contains('element__like')) {
+    toggleLike(element);
+  } else if (event.target.classList.contains('element__delete-button')) {
+    removeElement(element);
+  } else if (event.target.classList.contains('element__photo')) {
+    runReviewForm(element);
+  } else if (event.target.classList.contains('photo-preview__close-button')) {
+    toggleReviewForm();
+  }
 });
 
 function renderInitialCards() {
@@ -125,4 +140,23 @@ function formSubmitHandlerAdd(event, name, link) {
   toggleForm();
 }
 
+function toggleLike(element) {
+  like = element.querySelector('.element__like');
+  like.classList.toggle('element__like_active');
+}
 
+function removeElement(element) {
+  element.remove();
+}
+
+function runReviewForm(element) {
+
+  photoPreviewImg.src = element.querySelector('.element__photo').src;
+  photoPreviewImg.alt = element.querySelector('.element__photo').alt;
+  photoPreviewCaption.textContent = element.querySelector('.element__title').textContent;
+  toggleReviewForm();
+}
+
+function toggleReviewForm() {
+  photoPreview.classList.toggle('photo-preview_active');
+}

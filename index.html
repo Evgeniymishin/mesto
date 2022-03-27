@@ -51,21 +51,15 @@
     </div>
   </div>
 
-  <!-- <div class="popup popup_type_add">
-    <div class="popup__container">
-      <h2 class="popup__title">Новое место</h2>
-      <form class="popup__form" name="add-form">
-        <label class="popup__control">
-          <input class="popup__input popup__input_type_title" type="text" name="title" placeholder="Название">
-        </label>
-        <label class="popup__control">
-          <input class="popup__input popup__input_type_text" type="text" name="text" placeholder="Ссылка на картинку">
-        </label>
-        <button class="popup__submit-button" type="submit">Создать</button>
-      </form>
-      <button class="popup__close-button" type="button"></button>
+  <div class="photo-preview">
+    <div class="photo-preview__container">
+      <figure class="photo-preview__figure">
+        <img src="#" alt="alt" class="photo-preview__img">
+        <figcaption class="photo-preview__caption"></figcaption>
+      </figure>
+      <button class="photo-preview__close-button"></button>
     </div>
-  </div> -->
+  </div>
 
   <template id="element">
     <article class="element">
@@ -74,6 +68,7 @@
         <h2 class="element__title"></h2>
         <button class="element__like" type="button"></button>
       </div>
+      <button class="element__delete-button" type="button"></button>
     </article>
   </template>
 
