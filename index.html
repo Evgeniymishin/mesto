@@ -35,29 +35,45 @@
     <p class="footer__copyrights">&copy; 2020 Mesto Russia</p>
   </footer>
 
-  <div class="popup">
+  <div class="popup popup_type_edit">
     <div class="popup__container">
-      <h2 class="popup__title"></h2>
+      <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form">
         <label class="popup__control">
-          <input class="popup__input popup__input_type_title" type="text" name="title" placeholder="">
+          <input class="popup__input popup__input_type_title" type="text" name="title" placeholder="Ваше имя">
         </label>
         <label class="popup__control">
-          <input class="popup__input popup__input_type_text" type="text" name="text" placeholder="">
+          <input class="popup__input popup__input_type_text" type="text" name="text" placeholder="Род деятельности">
         </label>
-        <button class="popup__submit-button" type="submit"></button>
+        <button class="popup__submit-button" type="submit">Сохранить</button>
       </form>
       <button class="popup__close-button" type="button"></button>
     </div>
   </div>
 
-  <div class="photo-preview">
+  <div class="popup popup_type_add">
+    <div class="popup__container">
+      <h2 class="popup__title">Новое место</h2>
+      <form class="popup__form">
+        <label class="popup__control">
+          <input class="popup__input popup__input_type_title" type="text" name="title" placeholder="Название">
+        </label>
+        <label class="popup__control">
+          <input class="popup__input popup__input_type_text" type="text" name="text" placeholder="Ссылка на картинку">
+        </label>
+        <button class="popup__submit-button" type="submit">Добавить</button>
+      </form>
+      <button class="popup__close-button" type="button"></button>
+    </div>
+  </div>
+
+  <div class="popup popup_type_preview">
     <div class="photo-preview__container">
       <figure class="photo-preview__figure">
         <img src="#" alt="alt" class="photo-preview__img">
         <figcaption class="photo-preview__caption"></figcaption>
       </figure>
-      <button class="photo-preview__close-button"></button>
+      <button class="popup__close-button" type="button"></button>
     </div>
   </div>
 

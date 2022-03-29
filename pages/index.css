@@ -33,8 +33,6 @@
 @import url(../blocks/element/__delete-button/element__delete-button.css);
 @import url(../blocks/photo-preview/photo-preview.css);
 @import url(../blocks/photo-preview/__caption/photo-preview__caption.css);
-@import url(../blocks/photo-preview/__close-button/photo-preview__close-button.css);
 @import url(../blocks/photo-preview/__img/photo-preview__img.css);
 @import url(../blocks/photo-preview/__container/photo-preview__container.css);
-@import url(../blocks/photo-preview/_active/photo-preview_active.css);
 @import url(../blocks/photo-preview/__figure/photo-preview__figure.css);
