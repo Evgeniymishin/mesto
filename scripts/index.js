@@ -43,25 +43,8 @@ let popupAddInputName = popupAdd.querySelector('.popup__input_type_title');
 let popupAddInputNameURL = popupAdd.querySelector('.popup__input_type_text');
 const popupPreview = root.querySelector('.popup_type_preview');
 const popupPreviewCloseButton = popupPreview.querySelector('.popup__close-button');
-let popupPreviewImg = popupPreview.querySelector('.photo-preview__img');
-let popupPreviewCaption = popupPreview.querySelector('.photo-preview__caption');
-
-
-// let elements = root.querySelector('.elements');
-// let profileTitleInput = root.querySelector('.popup__input_type_title');
-// let profileTextInput = root.querySelector('.popup__input_type_text');
-// let profileName = root.querySelector('.profile-info__title');
-// let profileInfo = root.querySelector('.profile-info__text');
-// let form = root.querySelector('.popup__form');
-// let popupTitle = root.querySelector('.popup__title')
-// let submitButton = root.querySelector('.popup__submit-button');
-// let popupType = null;
-// let photoPreview = root.querySelector('.photo-preview');
-// let photoPreviewImg = photoPreview.querySelector('.photo-preview__img');
-// let photoPreviewCaption = photoPreview.querySelector('.photo-preview__caption');
-// let photoPreviewCloseButton =  photoPreview.querySelector('.photo-preview__close-button');
-
-
+let popupPreviewImg = popupPreview.querySelector('.popup__preview-img');
+let popupPreviewCaption = popupPreview.querySelector('.popup__preview-caption');
 
 renderInitialCards();
 buttonEdit.addEventListener('click', runEditForm);
