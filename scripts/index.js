@@ -58,7 +58,7 @@ popupPreviewCloseButton.addEventListener('click', () => closePopup(popupPreview)
 
 function renderInitialCards() { 
   initialCards.forEach(function(item) { 
-    let element = createElement(item.name, item.link);
+    const element = createElement(item.name, item.link);
     elements.prepend(element);
   }); 
 } 
@@ -71,7 +71,7 @@ function createElement(name, link) {
   const elementLike = element.querySelector('.element__like');
   const elementDeleteButton = element.querySelector('.element__delete-button');
   const elementPhoto = element.querySelector('.element__photo');
-  elementLike.addEventListener('click', () => toggleLike(element));
+  elementLike.addEventListener('click', () => toggleLike(elementLike));
   elementDeleteButton.addEventListener('click', () => removeElement(element));
   elementPhoto.addEventListener('click', () => runReviewForm(element));
   return element;
@@ -113,9 +113,8 @@ function submitAddForm(event) {
   popupAddForm.reset();
 }
 
-function toggleLike(element) {
-  let like = element.querySelector('.element__like');
-  like.classList.toggle('element__like_active');
+function toggleLike(elementLike) {
+  elementLike.classList.toggle('element__like_active');
 }
 
 function removeElement(element) {
