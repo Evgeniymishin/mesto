@@ -38,11 +38,11 @@ export class Card {
   createElement() {
     this._element = this._getTemplate();
     this._element.querySelector('.element__title').textContent = this._name; 
-    this._element.querySelector('.element__photo').setAttribute('src', this._link); 
-    this._element.querySelector('.element__photo').setAttribute('alt', this._name);
+    this._elementPhoto = this._element.querySelector('.element__photo');
+    this._elementPhoto.setAttribute('src', this._link); 
+    this._elementPhoto.setAttribute('alt', this._name);
     this._elementLike = this._element.querySelector('.element__like');
     this._elementDeleteButton = this._element.querySelector('.element__delete-button');
-    this._elementPhoto = this._element.querySelector('.element__photo');
     this._setEventListeners();
     return this._element;
   }

@@ -23,6 +23,7 @@ const popupPreviewImg = popupPreview.querySelector('.popup__preview-img');
 const popupPreviewCaption = popupPreview.querySelector('.popup__preview-caption');
 const popupList = root.querySelectorAll('.popup');
 const formList = Array.from(document.querySelectorAll(options.formSelector));
+const formValidators = {};
 
 renderInitialCards();
 enableValidation();
@@ -42,8 +43,7 @@ function renderInitialCards() {
 }
 
 function runEditForm() {
-  const form = new FormValidator(popupEditForm, options);
-  form.activeButtonState(popupEditSaveButton);
+  formValidators[ popupEditForm.name ].activeButtonState(popupEditSaveButton);
   popupEditInputName.value = profileName.textContent;
   popupEditInputNameInfo.value = profileInfo.textContent;
   openPopup(popupEdit);
@@ -79,8 +79,7 @@ function submitAddForm(event) {
   addCardToContainer(element);
   closePopup(popupAdd);
   popupAddForm.reset();
-  const form = new FormValidator(popupAddForm, options);
-  form.disableButtonState(popupAddSaveButton);
+  formValidators[ popupAddForm.name ].disableButtonState(popupAddSaveButton);
 }
 
 function closeFormByArea(event, popup) {
@@ -106,6 +105,7 @@ function runPreviewForm(name, url) {
 function enableValidation() {
   formList.forEach((formElement) => {
     const form = new FormValidator(formElement, options);
+    formValidators[ formElement.name ] = form;
     form.enableValidation();
   })
 }
