@@ -7,11 +7,11 @@ export class Card {
   }
 
   _getTemplate() {
-    const template = document
+    this._template = document
       .querySelector(this._templateSelector)
       .content
       .cloneNode(true);
-    return template;
+    return this._template;
   }
 
   _setEventListeners() {
@@ -39,7 +39,7 @@ export class Card {
     this._element = this._getTemplate();
     this._element.querySelector('.element__title').textContent = this._name; 
     this._element.querySelector('.element__photo').setAttribute('src', this._link); 
-    this._element.querySelector('.element__photo').setAttribute('alt', this._link);
+    this._element.querySelector('.element__photo').setAttribute('alt', this._name);
     this._elementLike = this._element.querySelector('.element__like');
     this._elementDeleteButton = this._element.querySelector('.element__delete-button');
     this._elementPhoto = this._element.querySelector('.element__photo');
