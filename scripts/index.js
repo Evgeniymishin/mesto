@@ -43,14 +43,14 @@ function renderInitialCards() {
 }
 
 function runEditForm() {
-  formValidators[ popupEditForm.name ].activeButtonState(popupEditSaveButton);
+  formValidators[ popupEditForm.name ].activeButtonState();
+  formValidators[ popupEditForm.name ].hideFormInputError();
   popupEditInputName.value = profileName.textContent;
   popupEditInputNameInfo.value = profileInfo.textContent;
   openPopup(popupEdit);
 }
 
 function openPopup(popup) {
-  hidePopupError(popup);
   popup.classList.add('popup_opened');
   document.addEventListener("keydown", closeFormByEsc);
 }
@@ -67,6 +67,7 @@ function submitEditForm(event) {
 }
 
 function runAddForm() {
+  formValidators[ popupAddForm.name ].hideFormInputError();
   openPopup(popupAdd);
 }
 
@@ -79,7 +80,7 @@ function submitAddForm(event) {
   addCardToContainer(element);
   closePopup(popupAdd);
   popupAddForm.reset();
-  formValidators[ popupAddForm.name ].disableButtonState(popupAddSaveButton);
+  formValidators[ popupAddForm.name ].disableButtonState();
 }
 
 function closeFormByArea(event, popup) {
@@ -108,11 +109,6 @@ function enableValidation() {
     formValidators[ formElement.name ] = form;
     form.enableValidation();
   })
-}
-
-function hidePopupError(popup) {
-  const form = new FormValidator(popup, options);
-  form.hideFormInputError();
 }
 
 function createCardObject(item, template, funcRunForm) {

@@ -59,14 +59,14 @@ export class FormValidator {
     }
   }
 
-  activeButtonState(buttonElement) {
-    buttonElement.classList.remove(this._options.inactiveButtonClass);
-    buttonElement.removeAttribute("disabled");
+  activeButtonState() {
+    this._buttonElement.classList.remove(this._options.inactiveButtonClass);
+    this._buttonElement.removeAttribute("disabled");
   }
 
-  disableButtonState(buttonElement) {
-    buttonElement.classList.add(this._options.inactiveButtonClass);
-    buttonElement.setAttribute("disabled", true);
+  disableButtonState() {
+    this._buttonElement.classList.add(this._options.inactiveButtonClass);
+    this._buttonElement.setAttribute("disabled", true);
   }
   
   hideFormInputError() {
