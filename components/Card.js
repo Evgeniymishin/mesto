@@ -1,9 +1,9 @@
 export class Card {
-  constructor(data, templateSelector, runPreviewForm) {
+  constructor({data, handleCardClick}, templateSelector) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
-    this._runPreviewForm = runPreviewForm;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -22,7 +22,7 @@ export class Card {
       this._removeElement();
     });
     this._elementPhoto.addEventListener('click', () => {
-      this._runPreviewForm(this._name, this._link);
+      this._handleCardClick(this._name, this._link);
     });
 
   }
