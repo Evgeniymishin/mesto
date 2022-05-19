@@ -4,18 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Сервис Mesto Russia</title>
-  <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="root">
   <header class="header">
-    <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+    <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип">
   </header>
   
   <main>
     <section class="profile">
       <div class="profile__container">
         <div class="profile__avatar-container">
-          <img class="profile__avatar" src="./images/profile-image.png" alt="Аватар автора">
+          <img class="profile__avatar" src="<%=require('./images/profile-image.png')%>" alt="Аватар автора">
         </div>
         <div class="profile-info">
           <h1 class="profile-info__title">Жак-Ив Кусто</h1>
@@ -91,7 +90,5 @@
       <button class="element__delete-button" type="button"></button>
     </article>
   </template>
-
-  <script type="module" src="./pages/index.js"></script>
 </body>
 </html>
