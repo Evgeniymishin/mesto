@@ -10,6 +10,7 @@ export default class Card {
     this._template = document
       .querySelector(this._templateSelector)
       .content
+      .querySelector('.element')
       .cloneNode(true);
     return this._template;
   }
@@ -32,7 +33,7 @@ export default class Card {
   }
 
   _removeElement() {
-    this._elementDeleteButton.closest('.element').remove();
+    this._element.remove();
   }
 
   createElement() {

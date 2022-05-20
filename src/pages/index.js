@@ -1,10 +1,10 @@
-import './pages/index.css';
-import Card from './components/Card.js';
-import Section from './components/Section.js';
-import PopupWithImage from './components/PopupWithImage.js';
-import PopupWithForm from './components/PopupWithForm.js';;
-import FormValidator from './components/FormValidator.js';
-import UserInfo from './components/UserInfo.js';
+import './index.css';
+import Card from '../components/Card.js';
+import Section from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';;
+import FormValidator from '../components/FormValidator.js';
+import UserInfo from '../components/UserInfo.js';
 
 import { 
   popupEditSelector,
@@ -20,7 +20,7 @@ import {
   popupEditForm,
   popupAddForm,
   options
-} from './utils/constants.js';
+} from '../utils/constants.js';
 
 const userInfo = new UserInfo({
   nameSelector: '.profile-info__title',
@@ -29,6 +29,7 @@ const userInfo = new UserInfo({
 
 const popupEdit = new PopupWithForm(popupEditSelector, () => {
   userInfo.setUserInfo({name: profileName, info: profileInfo})
+  popupEdit.close();
 });
 
 const popupPreview = new PopupWithImage(popupPreviewSelector);
@@ -39,6 +40,7 @@ const popupAddCard = new PopupWithForm(popupAddSelector, (data) => {
   const card = createCard(data);
   const cardElement = card.createElement();
   cardList.addItem(cardElement);
+  popupAddCard.close();
 });
 
 const popupEditValidator = new FormValidator(popupEditForm, options);
@@ -74,6 +76,7 @@ popupAddCard.setEventListeners();
 
 buttonAdd.addEventListener('click', () => {
   popupAddValidator.disableButtonState();
+  popupAddValidator.hideFormInputError();
   popupAddCard.open();
 })
 
