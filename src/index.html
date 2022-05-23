@@ -80,12 +80,37 @@
     </div>
   </div>
 
+  <div class="popup popup_type_confirm">
+    <div class="popup__container">
+      <h2 class="popup__title">Вы уверены?</h2>
+      <button class="popup__button-save" type="submit">Да</button>
+      <button class="popup__button-close" type="button"></button>
+    </div>
+  </div>
+
+  <div class="popup popup_type_update-avatar">
+    <div class="popup__container">
+      <h2 class="popup__title">Обновить аватар</h2>
+      <form class="popup__form" name="AvatarForm" novalidate>
+        <label class="popup__control">
+          <input class="popup__input popup__input_type_title" type="url" name="url" placeholder="Ссылка на картинку" required>
+          <span class="popup__error"></span>
+        </label>
+        <button class="popup__button-save" type="submit">Сохранить</button>
+      </form>
+      <button class="popup__button-close" type="button"></button>
+    </div>
+  </div>
+
   <template id="element">
     <article class="element">
       <img src="#" alt="alt" class="element__photo">
       <div class="element__title-container">
         <h2 class="element__title"></h2>
-        <button class="element__like" type="button"></button>
+        <div class="element__like-container">
+          <button class="element__like" type="button"></button>
+          <p class="element__like-count">0</p>
+        </div>
       </div>
       <button class="element__delete-button" type="button"></button>
     </article>
