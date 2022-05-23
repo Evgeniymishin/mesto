@@ -15,14 +15,14 @@ class Api {
     return fetch(`${this._url}/users/me`, {
       method: 'GET',
       headers: this._headers
-    }).then(this._handleResponse)
+    }).then(this._handleResponse);
   }
 
   getCards() {
     return fetch(`${this._url}/cards`, {
       method: 'GET',
       headers: this._headers
-    }).then(this._handleResponse)
+    }).then(this._handleResponse);
   }
 
   getInitialCards() {
@@ -48,8 +48,37 @@ class Api {
         name: data.name,
         link: data.link
       })
-    }).then(this._handleResponse)
+    }).then(this._handleResponse);
   }
 
-  
+  deleteCard(data) {
+    return fetch(`${this._url}/cards/${data._id}/likes`, {
+      method: 'DELETE',
+      headers: this._headers,
+    }).then(this._handleResponse);
+  }
+
+  setLike(data) {
+    return fetch(`${this._url}/cards/${data._id}`, {
+      method: 'PUT',
+      headers: this._headers,
+    }).then(this._handleResponse);
+  }
+
+  deleteLike(data) {
+    return fetch(`${this._url}/cards/${data._id}/likes`, {
+      method: 'DELETE',
+      headers: this._headers,
+    }).then(this._handleResponse);
+  }
+
+  updateAvatar(data) {
+    return fetch(`${this._url}/users/me/avatar`, {
+      method: 'PATCH',
+      headers: this._headers,
+      body: JSON.stringify({
+        avatar: data.avatar
+      })
+    }).then(this._handleResponse);
+  }
 }
