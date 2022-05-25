@@ -1,4 +1,4 @@
-class Api {
+export default class Api {
   constructor(options) {
     this._url = options.baseUrl;
     this._headers = options.headers;
@@ -25,8 +25,8 @@ class Api {
     }).then(this._handleResponse);
   }
 
-  getInitialCards() {
-    return Promise.all[this.getUserInfo(), this.getCards()];
+  getInitialData() {
+    return Promise.all([this.getUserInfo(), this.getCards()]);
   }
 
   setUserInfo(data) {
@@ -34,8 +34,8 @@ class Api {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
-        name: data.name,
-        about: data.about
+        name: data.title,
+        about: data.text
       })
     }).then(this._handleResponse);
   }
