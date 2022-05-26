@@ -25,6 +25,7 @@ const popupPreviewSelector = '.popup_type_preview';
 const cardTemplate = '#element';
 const cardsContainerSelector = '.elements';
 const popupAvatarSelector = '.popup_type_update-avatar';
+const popupConfirmSelector = '.popup_type_confirm';
 
 const cohortId = 'cohort-41';
 const authToken = 'f150d627-0cdf-4ba4-bcd4-9ff479e7dfa9';
@@ -46,5 +47,6 @@ export {
   baseUrl,
   authToken,
   popupAvatarSelector,
-  buttonAvatar
+  buttonAvatar,
+  popupConfirmSelector
 }
