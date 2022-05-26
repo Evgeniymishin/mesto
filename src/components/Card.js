@@ -31,13 +31,19 @@ export default class Card {
     this._removeElement(this._element);
   }
 
-  _likeCard(data) {
+  addLikeClass() {
     this._elementLike.classList.add('element__like_active');
+  }
+
+  removeLikeClass() {
+    this._elementLike.classList.remove('element__like_active');
+  }
+
+  _likeCard(data) {
     this._setLike(data);
   }
 
   _dislikeCard(data) {
-    this._elementLike.classList.remove('element__like_active');
     this._deleteLike(data);
   }
 

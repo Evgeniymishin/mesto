@@ -52,7 +52,7 @@ export default class Api {
   }
 
   deleteCard(data) {
-    return fetch(`${this._url}/cards/${data._id}/likes`, {
+    return fetch(`${this._url}/cards/${data._id}`, {
       method: 'DELETE',
       headers: this._headers,
     }).then(this._handleResponse);

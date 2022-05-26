@@ -25,7 +25,8 @@ import {
   baseUrl,
   authToken,
   buttonAvatar,
-  popupConfirmSelector
+  popupConfirmSelector,
+  popupAvatarForm
 } from '../utils/constants.js';
 
 const userInfo = new UserInfo({
@@ -42,13 +43,13 @@ const popupEdit = new PopupWithForm(popupEditSelector, (data) => {
   api.setUserInfo(data)
     .then((res) => {
       userInfo.setUserInfo(res);
+      popupEdit.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
       popupEdit.renderLoading(false);
-      popupEdit.close();
     })
 });
 
@@ -63,13 +64,13 @@ const popupAddCard = new PopupWithForm(popupAddSelector, (data) => {
       const card = createCard(res);
       const cardElement = card.createElement();
       cardList.addItem(cardElement);
+      popupAddCard.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
       popupAddCard.renderLoading(false);
-      popupAddCard.close();
     })
 });
 
@@ -79,8 +80,10 @@ popupEditValidator.enableValidation();
 const popupAddValidator = new FormValidator(popupAddForm, options);
 popupAddValidator.enableValidation();
 
-const popupConfirm = new PopupWithConfirm(popupConfirmSelector, {
-  handleFormSubmit: (data) => {
+const popupAvatarValidator = new FormValidator(popupAvatarForm, options);
+popupAvatarValidator.enableValidation();
+
+const popupConfirm = new PopupWithConfirm(popupConfirmSelector, (data) => {
     api.deleteCard(data)
       .then(() => {
         tempCard.deleteCard();
@@ -93,7 +96,7 @@ const popupConfirm = new PopupWithConfirm(popupConfirmSelector, {
         console.log(err);
       })
   }
-})
+)
 
 const createCard = (data) => {
   const card = new Card({
@@ -104,8 +107,8 @@ const createCard = (data) => {
     setLike: (data) => {
       api.setLike(data)
         .then((res) => {
-          console.log(res.likes);
           card.setLikeCount(res);
+          card.addLikeClass();
         })
         .catch((err) => {
           console.log(err);
@@ -115,6 +118,7 @@ const createCard = (data) => {
       api.deleteLike(data)
         .then((res) => {
         card.setLikeCount(res);
+        card.removeLikeClass();
       })
         .catch((err) => {
           console.log(err);
@@ -139,6 +143,7 @@ const cardList = new Section({
 popupEdit.setEventListeners();
 popupPreview.setEventListeners();
 popupAddCard.setEventListeners();
+popupConfirm.setEventListeners();
 
 
 buttonAdd.addEventListener('click', () => {
@@ -180,17 +185,18 @@ const popupAvatar = new PopupWithForm(popupAvatarSelector, (data) => {
   api.updateAvatar(data)
     .then((res) => {
       userInfo.setUserAvatar(res);
+      popupAvatar.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
       popupAvatar.renderLoading(false);
-      popupAvatar.close();
     })
 })
 
 buttonAvatar.addEventListener('click', () => {
+  popupAvatarValidator.disableButtonState();
   popupAvatar.open();
 })
 

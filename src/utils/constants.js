@@ -18,6 +18,8 @@ const popupEdit = root.querySelector('.popup_type_edit');
 const popupEditForm = popupEdit.querySelector('.popup__form');
 const popupAdd = root.querySelector('.popup_type_add');
 const popupAddForm = popupAdd.querySelector('.popup__form');
+const popupAvatar = root.querySelector('.popup_type_update-avatar');
+const popupAvatarForm = popupAvatar.querySelector('.popup__form');
 
 const popupEditSelector = '.popup_type_edit';
 const popupAddSelector = '.popup_type_add';
@@ -48,5 +50,6 @@ export {
   authToken,
   popupAvatarSelector,
   buttonAvatar,
-  popupConfirmSelector
+  popupConfirmSelector,
+  popupAvatarForm
 }
